@@ -1,0 +1,109 @@
+actions:
+- action_deactivate_form
+- utter_ask_Date
+- utter_ask_Emailid
+- utter_ask_Gender
+- utter_ask_Name
+- utter_ask_account
+- utter_ask_artist
+- utter_ask_cellphone
+- utter_ask_language
+- utter_default
+- utter_goodbye
+- utter_gotit
+- utter_greet
+- utter_help
+- utter_iamabot
+- utter_next
+- utter_signup_login
+- utter_sorry
+- utter_submit
+entities:
+- Date
+- Emailid
+- Gender
+- Name
+- account
+- cellphone
+- language
+forms:
+- account_form
+- preference_form
+intents:
+- stop
+- greet
+- inform
+- greet + inform
+- affirm
+- deny
+- thanks
+- goodbye
+responses:
+  utter_ask_Date:
+  - text: What is your date of birth
+  utter_ask_Emailid:
+  - text: What is your email id?
+  utter_ask_Gender:
+  - text: What is your gender
+  utter_ask_Name:
+  - text: What is your name?
+  utter_ask_account:
+  - text: Would you like to create a new spotify account with phone or email
+  utter_ask_artist:
+  - text: Which artists would you want to follow?
+  utter_ask_cellphone:
+  - text: What is your mobile number
+  utter_ask_language:
+  - text: What languages would you like to listen to?
+  utter_default:
+  - text: Sorry, I did not understand. Could you say that again?
+  utter_goodbye:
+  - text: Goodbye! Enjoy listening!
+  utter_gotit:
+  - text: Got it!
+  utter_greet:
+  - text: Hey!
+  utter_help:
+  - text: Sure, let me help you with that!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_next:
+  - text: Okay let me understand your preferences better
+  utter_signup_login:
+  - text: Would you like to sign up for free or login to an existing account?
+  utter_sorry:
+  - text: Sorry but we need this information to create a better experience for you
+      :)
+  utter_submit:
+  - text: Got it! A account has been created
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60
+slots:
+  Date:
+    auto_fill: false
+    type: unfeaturized
+  Emailid:
+    auto_fill: false
+    type: unfeaturized
+  Gender:
+    auto_fill: false
+    type: unfeaturized
+  Name:
+    auto_fill: false
+    type: unfeaturized
+  account:
+    type: categorical
+    values:
+    - email
+    - phone
+    - __other__
+  artist:
+    type: list
+  cellphone:
+    auto_fill: false
+    type: unfeaturized
+  language:
+    type: list
+  requested_slot:
+    type: unfeaturized
