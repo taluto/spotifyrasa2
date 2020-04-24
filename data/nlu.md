@@ -12,7 +12,7 @@
 - see you around
 - see you later
 
-##intent:inform
+## intent:inform
 - [phone](account:Phone)
 - [email](account:Email)
 - My [email](account:Email) id is [jupiter@gmail.com](Emailid)
@@ -76,30 +76,109 @@
 - umm just [Bengali](language)
 - only [arabic](language)
 - I like [Korean](language)
+- [Drake](Name) and [Arijit Singh](Name)
+- I would like to listen to [YNW Melly](Name)
+- I want to listen to [archana](Name)
+- [Post Malone](Name) and [Roddy Rich](Name)
+- I would like to listen to [Ashwin Makhija](Name) and [Salman Khan](Name)
+- [John](Name), [Badshah](Name), [Weeknd](Name)
+- [phone](account:Phone) number please
+- [+91 9845012729](cellphone)
+- [1st jan 20000](Date)
+- my name is [taluto14](Name)
+- only [english](language) and [spanish](language) please
+- [Post malone](Name) and [maluma](Name)
+- [hindi](language) [english](language) [spanish](language)
+- [honey singh](Name) and [diljit singh](Name)
+- hello i would like to open a new account
+- [bajaj.t@husky.neu.edu](Emailid)
+- the name i want to use is [talin rajani](Name)
+- i listen to [hindi](language), [spanish](language), [telegu](language)
+- [rajnikanth](Name) and [atif aslam](Name)
+- [talinbajaj@gmail.com](Emailid)
+- [14th april 2000](Date)
+- [Kannada](language), [English](language)
+- [chunkey pandey](Name) and [varun dhawan](Name)
+- [hello@jupiter.money](Emailid)
+- [18 ovtober 1993](Date:18 october 1993)
+- [make](Gender:male)
+- [hannah](Name)
+- [email](account:Email)
+- okay my [email](account:Email)
 
-##regex:Emailid
+## intent:affirm
+- yes
+- indeed
+- of course
+- that sounds good
+- correct
+- okay
+- okay sure
+
+## intent:deny
+- no
+- never
+- I don't think so
+- don't like that
+- no way
+- not really
+
+## intent:stop
+- ok then you cant help me
+- i do not want to choose this now
+- you can't help me
+- that's not what i want
+- this is leading to nothing
+- this conversation is not helpful
+- you cannot help me with what I want
+- hm i don't think you can do what i want
+- stop
+
+## intent:thanks
+- thank you
+- thanks
+- thanks for the help
+
+## intent:greet + inform
+- hello i want to open a new account with my [email](account:Email)
+- hello i want to use my [email](account:Email) to create an account
+
+## synonym:18 october 1993
+- 18 ovtober 1993
+
+## synonym:Email
+- email
+
+## synonym:Phone
+- phone
+
+## synonym:male
+- make
+
+## regex:Date
+- (JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|NOV|OCT|DEC)\s[\d]{1,2}[\d]{4}
+- (January|February|March|April|May|June|July|August|September|October|November|December)\s[\d]{1,2}[\d]{4}
+- [\d]{1,2} [ADFJMNOS]\w* [\d]{4}
+- [\d]{1,2} [ADFJMNOS]\w* [\d]{4}
+- [\d]{1,2}-[\d]{1,2}-[\d]{2}
+- [\d]{1,2}/[\d]{1,2}/[\d]{4}
+- [\d]{1,2}\s(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|NOV|OCT|DEC)\s[\d]{4}
+- [\d]{1,2}\s(January|February|March|April|May|June|July|August|September|October|November|December)\s[\d]{4}
+
+## regex:Emailid
+- [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-+-]+\.[a-zA-Z0-9-.]+\.[a-zA-Z0-9-.]+$
 - [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$
 
-##regex:Date
-- [\d]{1,2}/[\d]{1,2}/[\d]{4}
-- [\d]{1,2}-[\d]{1,2}-[\d]{2}
-- [\d]{1,2} [ADFJMNOS]\w* [\d]{4}
-- [\d]{1,2}\s(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|NOV|OCT|DEC)\s[\d]{4}
-- [\d]{1,2} [ADFJMNOS]\w* [\d]{4}
-- [\d]{1,2}\s(January|February|March|April|May|June|July|August|September|October|November|December)\s[\d]{4}
-- (January|February|March|April|May|June|July|August|September|October|November|December)\s[\d]{1,2}[\d]{4}
-- (JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|NOV|OCT|DEC)\s[\d]{1,2}[\d]{4}
-
-##regex:cellphone
-- \d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4}
--  ^\+(?:[0-9] ?){6,14}[0-9]$
-- ^\d{3}-\d{3}-\d{4}$
-
-##regex:Name
+## regex:Name
 - /^[a-z ,.'-]+$/i
-- ^[A-Z][-a-zA-Z]+$
 - ^[A-Z]'?[-a-zA-Z]+$
+- ^[A-Z][-a-zA-Z]+$
 - ^[A-Z][a-zA-Z]+$
+
+## regex:cellphone
+- \d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4}
+- ^\+(?:[0-9] ?){6,14}[0-9]$
+- ^\d{3}-\d{3}-\d{4}$
 
 ## lookup:language
 - English
@@ -124,41 +203,3 @@
 - Urdu
 - Korean
 - German
-
-## intent:affirm
-- yes
-- indeed
-- of course
-- that sounds good
-- correct
-- okay
-
-## intent:deny
-- no
-- never
-- I don't think so
-- don't like that
-- no way
-- not really
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
